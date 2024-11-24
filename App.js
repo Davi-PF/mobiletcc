@@ -25,7 +25,7 @@ import ChangePassword from './src/pages/ChangePassword';
 
 import {UserProvider} from './src/contexts/UserContext';
 import {COLORS} from './src/constants/constants';
-import NotificationTab from './src/pages/NotificationTab';
+import NotificationTab from './src/pages/NotificationTab/NotificationTab';
 import getToken from './src/utils/getTokenID';
 
 import {PermissionsAndroid} from 'react-native';
@@ -210,7 +210,7 @@ export default function App() {
           <NavigationContainer linking={linking}>
             <StatusBar style='auto' backgroundColor={COLORS.BLUE_MAIN} />
             <Stack.Navigator
-              initialRouteName='Login'
+              initialRouteName='NotificationTab'
               screenOptions={{
                 headerShown: false,
               }}>
