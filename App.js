@@ -26,6 +26,7 @@ import ChangePassword from './src/pages/ChangePassword';
 import {UserProvider} from './src/contexts/UserContext';
 import {COLORS} from './src/constants/constants';
 import NotificationTab from './src/pages/NotificationTab/NotificationTab';
+import HeatmapPage from './src/pages/HeatmapPage/HeatmapPage';
 import getToken from './src/utils/getTokenID';
 
 import {PermissionsAndroid} from 'react-native';
@@ -210,7 +211,7 @@ export default function App() {
           <NavigationContainer linking={linking}>
             <StatusBar style='auto' backgroundColor={COLORS.BLUE_MAIN} />
             <Stack.Navigator
-              initialRouteName='NotificationTab'
+              initialRouteName='HeatmapPage'
               screenOptions={{
                 headerShown: false,
               }}>
@@ -229,6 +230,7 @@ export default function App() {
               <Stack.Screen name='AccessRecovery' component={AccessRecovery} />
               <Stack.Screen name='ChangePassword' component={ChangePassword} />
               <Stack.Screen name='NotificationTab' component={NotificationTab} />
+              <Stack.Screen name='HeatmapPage' component={HeatmapPage} />
             </Stack.Navigator>
             <Header />
             {/* <Toast ref={(ref) => Toast.setRef(ref)} /> */}
