@@ -4,7 +4,7 @@ import axios from 'axios';
 const BASE_URL = 'http://192.168.0.200:5000/api/scanHistory';
 
 const authToken =
-  'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYXZpcHJ1ZmVyQGdtYWlsLmNvbSIsInJvbGVzIjoiUk9MRV9SRVNQT05Tw4FWRUwiLCJpYXQiOjE3MzI0OTE0MDcsImV4cCI6MTczMjU3NzgwN30.R4jVjo_hlsiImIEPUctdfC6_K37mvjnHCQwmDpAQnnDET6X9tzzPXP76e0iwZM8JZzONmaFIf8NbUF_-Su0NiQ';
+  'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYXZpcHJ1ZmVyQGdtYWlsLmNvbSIsInJvbGVzIjoiUk9MRV9SRVNQT05Tw4FWRUwiLCJpYXQiOjE3MzI2ODA3MjMsImV4cCI6MTczMjc2NzEyM30.ms3FsOTxfripBR0CRMdBRywEWnbaYWZYurZYCwhuF2VnzpgioQjNQolmGOSad4HMVVtu-Kjq8j3NGdk0wDrSeg';
 export const useHeatmapData = cpf => {
   const [originalPoints, setOriginalPoints] = useState([]);
   const [loading, setLoading] = useState(false);

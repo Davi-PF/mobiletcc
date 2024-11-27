@@ -1,12 +1,15 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { RectButton, Swipeable } from 'react-native-gesture-handler';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faBell } from '@fortawesome/free-solid-svg-icons/faBell';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import {Text, View, StyleSheet} from 'react-native';
+import {RectButton, Swipeable} from 'react-native-gesture-handler';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faBell} from '@fortawesome/free-solid-svg-icons/faBell';
+import {faTrash, faMap} from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
+import {useNavigation} from '@react-navigation/native';
 
-export const NotificationItem = ({ notification, onDelete }) => {
+export const NotificationItem = ({notification, onDelete}) => {
+  const {navigate} = useNavigation();
+  // Ação para o swipe da direita para a esquerda
   const renderRightActions = () => (
     <RectButton
       style={styles.deleteButton}
@@ -15,8 +18,19 @@ export const NotificationItem = ({ notification, onDelete }) => {
     </RectButton>
   );
 
+  // Ação para o swipe da esquerda para a direita
+  const renderLeftActions = () => (
+    <RectButton
+      style={styles.mapButton}
+      onPress={() => navigate('HeatmapPage')}>
+      <FontAwesomeIcon icon={faMap} color="#fff" size={20} />
+    </RectButton>
+  );
+
   return (
-    <Swipeable renderRightActions={renderRightActions}>
+    <Swipeable
+      renderRightActions={renderRightActions}
+      renderLeftActions={renderLeftActions}>
       <View style={styles.container}>
         <FontAwesomeIcon
           icon={faBell}
@@ -69,6 +83,12 @@ const styles = StyleSheet.create({
   },
   deleteButton: {
     backgroundColor: '#FF5252',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 64,
+  },
+  mapButton: {
+    backgroundColor: '#302D8A', // Cor diferente para o swipe à esquerda
     justifyContent: 'center',
     alignItems: 'center',
     width: 64,

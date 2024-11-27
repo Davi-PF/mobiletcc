@@ -211,7 +211,7 @@ export default function App() {
           <NavigationContainer linking={linking}>
             <StatusBar style='auto' backgroundColor={COLORS.BLUE_MAIN} />
             <Stack.Navigator
-              initialRouteName='HeatmapPage'
+              initialRouteName='NotificationTab'
               screenOptions={{
                 headerShown: false,
               }}>
