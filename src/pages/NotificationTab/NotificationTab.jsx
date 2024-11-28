@@ -2,6 +2,7 @@ import React from 'react';
 import { View, FlatList, Text, ActivityIndicator, StyleSheet, Dimensions } from 'react-native';
 import { NotificationItem } from './components/NotificationItem';
 import { useNotifications } from './hooks/useNotifications';
+import useDeviceRegistration from '../../hooks/useDeviceRegistration';
 
 
 const HEADER_HEIGHT = Dimensions.get('window').height * 0.1; // Altura do Header
@@ -9,6 +10,8 @@ const HEADER_HEIGHT = Dimensions.get('window').height * 0.1; // Altura do Header
 const NotificationTab = () => {
   const cpf = '09876543210'; // Substituir pelo valor dinâmico
   const { notifications, loading, error, deleteNotification } = useNotifications(cpf);
+
+  useDeviceRegistration(cpf);
 
   if (loading) {
     return (
